@@ -59,6 +59,7 @@ if numerator % denominator == 0 {
 
 var extraNumerator = 0
 var extraDenominator = 0
+var fullNumbers = numerator / denominator
 
 if numerator % denominator != 0 {
     for i in stride(from: denominator/2, through: 2, by: -1) {
@@ -75,7 +76,7 @@ if numerator % denominator != 0 {
 }
 
 if extraDenominator == 0 && extraNumerator == 0 {
-    print("The result is: \n\(numerator)/\(denominator)")
+    print("The result is: \n\(fullNumbers) \(numerator % denominator)/\(denominator)")
 } else {
     print("The result is: \n\(numerator/denominator) \(extraNumerator)/\(extraDenominator)")
 }
