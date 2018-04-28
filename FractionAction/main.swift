@@ -75,6 +75,11 @@ if numerator % denominator != 0 {
     
 }
 
+if fullNumbers == 0 {
+    print("The result is: \n\(numerator)/\(denominator)")
+    exit(9)
+}
+
 if extraDenominator == 0 && extraNumerator == 0 {
     print("The result is: \n\(fullNumbers) \(numerator % denominator)/\(denominator)")
 } else {
