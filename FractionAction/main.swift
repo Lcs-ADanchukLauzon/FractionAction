@@ -70,10 +70,25 @@ if numerator % denominator != 0 {
         } else {
             continue
         }
-        break
     }
     
 }
+
+var reducedNumerator = 0
+var reducedDenominator = 0
+if fullNumbers == 0 {
+    for i in stride(from: denominator/2, through: 2, by: -1) {
+        
+        if numerator % i == 0 && denominator % i == 0 {
+            reducedNumerator = numerator / i
+            reducedDenominator = denominator / i
+            print("The result is: \n\(reducedNumerator)/\(reducedDenominator)")
+            exit(9)
+        }
+        
+    }
+}
+
 
 if fullNumbers == 0 {
     print("The result is: \n\(numerator)/\(denominator)")
@@ -83,7 +98,7 @@ if fullNumbers == 0 {
 if extraDenominator == 0 && extraNumerator == 0 {
     print("The result is: \n\(fullNumbers) \(numerator % denominator)/\(denominator)")
 } else {
-    print("The result is: \n\(numerator/denominator) \(extraNumerator)/\(extraDenominator)")
+    print("The result is: \n\(fullNumbers) \(extraNumerator)/\(extraDenominator)")
 }
 
 
