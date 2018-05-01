@@ -43,7 +43,7 @@ while 1 == 1 {
     
     // prompt for the denominator
     print("Denominator?")
-   
+    
     // check for nil
     guard let input1 = readLine() else {
         continue
@@ -83,10 +83,12 @@ if numerator % denominator != 0 {
     for i in stride(from: denominator/2, through: 2, by: -1) {
         
         if (numerator % denominator) % i == 0 && denominator % i == 0 {
-        
+            
             // if a common factor is found then reduce the fraction
             extraNumerator = (numerator % denominator) / i
             extraDenominator = denominator / i
+            print("The result is: \n\(fullNumbers) \(extraNumerator)/\(extraDenominator)")
+            exit(9)
         } else {
             continue
         }
@@ -98,12 +100,12 @@ if numerator % denominator != 0 {
 if fullNumbers == 0 {
     var reducedNumerator = 0
     var reducedDenominator = 0
-   
+    
     // starting from the helf way point of the denominator and going down check for common factors.
     for i in stride(from: denominator/2, through: 2, by: -1) {
         
-       // if a common farctor is found, reduce the fraction and end the program
-       if numerator % i == 0 && denominator % i == 0 {
+        // if a common farctor is found, reduce the fraction and end the program
+        if numerator % i == 0 && denominator % i == 0 {
             reducedNumerator = numerator / i
             reducedDenominator = denominator / i
             print("The result is: \n\(reducedNumerator)/\(reducedDenominator)")
@@ -121,14 +123,10 @@ if fullNumbers == 0 {
 
 
 if extraDenominator == 0 && extraNumerator == 0 {
-   
     // if this condition is ture then that means no common factor was found for what was left of the fraction
     print("The result is: \n\(fullNumbers) \(numerator % denominator)/\(denominator)")
-} else {
-  
-    // if what was left could be reduced than the full number and the reduce ramains are printed.
-    print("The result is: \n\(fullNumbers) \(extraNumerator)/\(extraDenominator)")
 }
+
 
 
 
